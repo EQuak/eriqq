@@ -9,6 +9,9 @@ export const Text = styled('div', {
       underline: {
         textDecoration: 'underline',
       },
+      uppercase: {
+        textTransform: 'uppercase',
+      },
     },
     size: {
       title: {
@@ -61,9 +64,6 @@ export const Text = styled('div', {
       label: {
         marginBottom: '1rem',
       },
-      subLabel: {
-        textTransform: 'uppercase',
-      },
     },
     weight: {
       bold: {
@@ -84,7 +84,7 @@ export const Text = styled('div', {
         color: 'inherit',
       },
       grey: {
-        color: '$greyBase',
+        color: '$grey',
       },
       primary: {
         color: '$primary',

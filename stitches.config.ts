@@ -3,9 +3,10 @@ import { createStitches } from '@stitches/react';
 const baseColors = {
   black: '#000000',
   white: '#FFFFFF',
-  primary: '#0066ff',
-  grey: '#F0F0F0',
+  primary: '#61B194',
+  background: '#F2F5F6',
   greyBlack: '#333333',
+  grey: '#808080',
 };
 
 export const colors = {
@@ -13,30 +14,25 @@ export const colors = {
 };
 
 export const fontSizes = {
-  title: '4.5rem',
-  subTitle: '3rem',
+  title: '3rem', // 48px
+  subTitle: '2.5rem', // 40px
   h1: '2rem', // 32px
   h2: '1.5rem', // 24px
-  hTest: '22px',
   h3: '1.125rem', // 18px
   body: '1rem', // 16px
-  detail: '0.875rem',
-  small: '0.75rem',
-  link: '0.875rem',
-  label: '0.75rem',
-  input: '0.875rem',
 };
 
 export const { styled, css, globalCss, keyframes, getCssText } = createStitches(
   {
-    prefix: 'melmac',
+    prefix: 'eriqq',
     theme: {
       colors: {
         black: colors.black,
         white: colors.white,
         primary: colors.primary,
-        grey: colors.grey,
+        background: colors.background,
         greyBlack: colors.greyBlack,
+        grey: colors.grey,
       },
       fontSizes,
       fontWeights: {

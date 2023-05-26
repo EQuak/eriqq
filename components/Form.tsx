@@ -4,12 +4,12 @@ export const Row = styled('div', {
   borderBottom: '1px solid grey',
   alignContent: 'center',
   paddingTop: '1rem',
-  paddingBottom: '.5rem',
+  paddingBottom: '1.5rem',
   wordWrap: 'break-word',
 
   '@tablet': {
-    paddingTop: '1.875rem',
-    paddingBottom: '1rem',
+    // paddingTop: '1.875rem',
+    // paddingBottom: '1rem',
   },
 });
 
@@ -25,21 +25,26 @@ export const Error = styled('div', {
   fontWeight: '$normal',
   fontSize: '$small',
   color: 'red',
+  height: '1rem',
+  alignItems: 'center',
+  marginBottom: '.5rem',
 });
 
 export const InputWithLabelWrap = styled('div', {
-  display: 'grid',
-  gridAutoRows: '1.5rem',
-  alignItems: 'center',
-  borderRadius: '.75rem',
-  border: '1px solid grey',
-  padding: '.5rem',
-  marginBottom: '.5rem',
+  display: 'flex',
+  // gridAutoRows: '1.5rem',
+  flexDirection: 'column',
+  // alignItems: 'center',
+  // borderRadius: '.75rem',
+  borderBottom: '1px solid grey',
+  paddingTop: '1rem',
+  // paddingBottom: '1rem',
+  // marginBottom: '.5rem',
 
   variants: {
     error: {
       true: {
-        border: '1px solid red',
+        borderBottom: '1px solid red',
       },
     },
   },
@@ -48,7 +53,7 @@ export const InputWithLabelWrap = styled('div', {
 export const InputV2 = styled('input', {
   display: 'block',
   width: '100%',
-  // height: '3.5rem',
+  height: '2rem',
   fontFamily: '$base',
   border: 'none',
   outline: 'none',

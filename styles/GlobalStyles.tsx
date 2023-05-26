@@ -8,17 +8,19 @@ export const globalStyles = globalCss({
     boxSizing: 'border-box',
     height: '100%',
     fontFamily: "'Inter',sans-serif",
-    backgroundColor: '$grey',
+    backgroundColor: '$background',
 
     footer: {
+      backgroundColor: '$background',
       position: 'fixed',
       bottom: 0,
       width: '100%',
       height: '60px' /* Height of the footer */,
-      background: '$greyBlack',
-      color: '$grey',
+      borderTop: '1px solid $primary',
+      color: '$primary',
       display: 'flex',
       alignItems: 'center',
+      flexDirection: 'row-reverse',
     },
   },
 

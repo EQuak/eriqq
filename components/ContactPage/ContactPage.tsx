@@ -1,12 +1,13 @@
-import Page from '../Page';
-import Text from '../Text';
-import { styled } from '../../stitches.config';
-import * as Form from '../Form';
 import { useForm } from 'react-hook-form';
-import Button from '../Button';
-import { ImageTitle } from '../Title';
-import backgroundImage from '../../public/pexels-andrea-piacquadio-845451.jpg';
 import axios from 'axios';
+
+import Page from '../Page';
+import Button from '../Button';
+import Text from '../Text';
+import * as Form from '../Form';
+
+import { styled } from '../../stitches.config';
+
 export function ContactPage() {
   const {
     register,
@@ -24,6 +25,7 @@ export function ContactPage() {
         LastName: data.lastName,
         Email: data.email,
         Phone: data.phone,
+        Company: data.company,
         Message: data.message,
       })
       .then((response) => {
@@ -32,91 +34,131 @@ export function ContactPage() {
       })
       .catch((error) => console.log(error));
   };
-
   return (
     <Page title="Contact">
       <Content>
-        <ImageTitle
-          title="Contact us"
-          backgroundSource={backgroundImage}
-          alt="pexels-andrea-piacquadio-845451"
-        />
-        <Layout>
-          <InformationWrap>
-            <Text weight={'bold'} type="subLabel" size="xxlarge">
+        <InformationWrap>
+          <Form.Label>
+            <Text weight={'bold'} decoration={'uppercase'} size="xxlarge">
               Get in touch
             </Text>
-            <Form.Row>
-              <Text weight={'bold'} type="subLabel" size="xlarge">
-                Melmac Logistics, LLC
+          </Form.Label>
+          <Form.Row>
+            <Text weight={'bold'} decoration={'uppercase'} size="xlarge">
+              Email
+            </Text>
+            <a href="mailto: eriq.quatkemeyer@hotmail.com">
+              <Text decoration={'uppercase'} size="xlarge">
+                eriq.quatkemeyer@hotmail.com
               </Text>
-            </Form.Row>
-            <Form.Row>
-              <Text weight={'bold'} type="subLabel" size="xlarge">
-                Email
+            </a>
+          </Form.Row>
+          <Form.Row>
+            <Text weight={'bold'} decoration={'uppercase'} size="xlarge">
+              Phone
+            </Text>
+            <a href="tel:+4802842072">
+              <Text decoration={'uppercase'} size="xlarge">
+                (480)-284-2072
               </Text>
-              <a href="mailto: logistics@melmaclogistics.com">
-                <Text type="subLabel" size="xlarge">
-                  logistics@melmaclogistics.com
-                </Text>
-              </a>
-            </Form.Row>
-          </InformationWrap>
-          <FormWrap onSubmit={handleSubmit(onSubmit)} method="POST">
-            <Form.Label>
-              <Text weight={'bold'} type="subLabel" size="xxlarge">
-                Send us a message
+            </a>
+          </Form.Row>
+          <Form.Row>
+            <Text weight={'bold'} decoration={'uppercase'} size="xlarge">
+              Location
+            </Text>
+            <a href="mailto: eriq.quatkemeyer@hotmail.com">
+              <Text decoration={'uppercase'} size="xlarge">
+                San Tan Valley, Arizona 85143
               </Text>
-            </Form.Label>
-            <Form.InputWithLabelWrap error={Boolean(errors.firstName)}>
-              <Text size="large">First Name*</Text>
-              <Form.InputV2 {...register('firstName', { required: true })} />
-              <Form.Error>
-                {errors.firstName && <p>first name is required.</p>}
-              </Form.Error>
-            </Form.InputWithLabelWrap>
-            <Form.InputWithLabelWrap error={Boolean(errors.lastName)}>
-              <Text size="large">Last Name*</Text>
-              <Form.InputV2 {...register('lastName', { required: true })} />
-              <Form.Error>
-                {errors.lastName && <p>last name is required.</p>}
-              </Form.Error>
-            </Form.InputWithLabelWrap>
-            <Form.InputWithLabelWrap error={Boolean(errors.email)}>
-              <Text size="large">Email*</Text>
-              <Form.InputV2 {...register('email', { required: true })} />
-              <Form.Error>
-                {errors.email && <p>email is required.</p>}
-              </Form.Error>
-            </Form.InputWithLabelWrap>
-            <Form.InputWithLabelWrap error={Boolean(errors.phone)}>
-              <Text size="large">Phone*</Text>
-              <Form.InputV2 {...register('phone', { required: true })} />
-              <Form.Error>
-                {errors.phone && <p>phone is required.</p>}{' '}
-              </Form.Error>
-            </Form.InputWithLabelWrap>
-            <Form.InputWithLabelWrap>
-              <Text size="large">Message</Text>
-              <Form.InputV2 {...register('message')} />
-            </Form.InputWithLabelWrap>
-            <ButtonWrap>
-              <Button size={'large'} type="submit" theme={'main'}>
-                Submit
-              </Button>
-            </ButtonWrap>
-          </FormWrap>
-        </Layout>
+            </a>
+          </Form.Row>
+        </InformationWrap>
+        <FormWrap onSubmit={handleSubmit(onSubmit)} method="POST">
+          <Form.Label>
+            <Text weight={'bold'} decoration={'uppercase'} size="xxlarge">
+              Send me a message
+            </Text>
+          </Form.Label>
+          <Form.InputWithLabelWrap error={Boolean(errors.firstName)}>
+            <Text weight={'bold'} size="xlarge">
+              First Name*
+            </Text>
+            <Form.InputV2 {...register('firstName', { required: true })} />
+            <Form.Error>
+              {errors.firstName && <>first name is required.</>}
+            </Form.Error>
+          </Form.InputWithLabelWrap>
+          <Form.InputWithLabelWrap error={Boolean(errors.lastName)}>
+            <Text weight={'bold'} size="xlarge">
+              Last Name*
+            </Text>
+            <Form.InputV2 {...register('lastName', { required: true })} />
+            <Form.Error>
+              {errors.lastName && <>last name is required.</>}
+            </Form.Error>
+          </Form.InputWithLabelWrap>
+          <Form.InputWithLabelWrap error={Boolean(errors.email)}>
+            <Text weight={'bold'} size="xlarge">
+              Email*
+            </Text>
+            <Form.InputV2 {...register('email', { required: true })} />
+            <Form.Error>{errors.email && <>email is required.</>}</Form.Error>
+          </Form.InputWithLabelWrap>
+          <Form.InputWithLabelWrap error={Boolean(errors.phone)}>
+            <Text weight={'bold'} size="xlarge">
+              Phone*
+            </Text>
+            <Form.InputV2 {...register('phone', { required: true })} />
+            <Form.Error>{errors.phone && <>phone is required.</>} </Form.Error>
+          </Form.InputWithLabelWrap>
+          <Form.InputWithLabelWrap error={Boolean(errors.company)}>
+            <Text weight={'bold'} size="xlarge">
+              Company*
+            </Text>
+            <Form.InputV2 {...register('company', { required: true })} />
+            <Form.Error>
+              {errors.company && <>company is required.</>}
+            </Form.Error>
+          </Form.InputWithLabelWrap>
+          <Form.InputWithLabelWrap>
+            <Text weight={'bold'} size="xlarge">
+              Message
+            </Text>
+            <Form.InputV2 {...register('message')} />
+          </Form.InputWithLabelWrap>
+          <ButtonWrap>
+            <Button size={'large'} type="submit" theme={'main'}>
+              Submit
+            </Button>
+          </ButtonWrap>
+        </FormWrap>
       </Content>
     </Page>
   );
 }
 
 const Content = styled('div', {
-  paddingBottom: '5rem',
   display: 'flex',
   flexDirection: 'column',
-  gap: '1rem',
+  width: '100%',
+  justifyContent: 'space-between',
+  gap: '2rem',
+
+  padding: '0rem 1.5rem 5rem 1.5rem',
+
+  '@tablet': {
+    gap: '6rem',
+
+    flexDirection: 'row',
+    padding: '0rem 2rem 5rem 2rem',
+  },
+});
+
+const InformationWrap = styled('div', {
+  display: 'flex',
+  flexDirection: 'column',
+  flex: 1,
 });
 
 const FormWrap = styled('form', {
@@ -125,45 +167,6 @@ const FormWrap = styled('form', {
   flex: 1,
 });
 
-const InformationWrap = styled('div', {
-  display: 'flex',
-  flexDirection: 'column',
-
-  flex: 1,
-});
-
-const Layout = styled('div', {
-  display: 'flex',
-  justifyContent: 'space-between',
-  flexDirection: 'column',
-  gap: '2rem',
-  margin: '0rem 1rem',
-
-  '@tablet': {
-    gap: '1.875rem',
-    margin: '0rem 1.875rem',
-  },
-
-  '@desktop': {
-    gap: '6rem',
-    margin: '0rem 3.875rem',
-    flexDirection: 'row',
-  },
-});
-
-const SVGWrap = styled('div', {
-  display: 'none',
-
-  '@desktop': {
-    display: 'flex',
-    paddingTop: '2rem',
-    width: '100%',
-    justifyContent: 'center',
-    svg: {
-      height: '195px',
-    },
-  },
-});
 const ButtonWrap = styled('div', {
   paddingTop: '1rem',
 });

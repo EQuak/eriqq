@@ -1,22 +1,14 @@
 import { useState } from 'react';
-import { keyframes, styled } from '../../stitches.config';
-import { MobileLinks } from './MobileLinks';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
+
+import { MobileLinks } from './MobileLinks';
+
+import { styled } from '../../stitches.config';
 
 interface NavigationWrapperProps {
   children?: React.ReactNode;
 }
-
-const openAnimation = keyframes({
-  from: { top: 0 },
-  to: { top: '120px' },
-});
-
-const closeAnimation = keyframes({
-  from: { top: '120px' },
-  to: { top: 0 },
-});
 
 function NavigationWrapper({ children }: NavigationWrapperProps) {
   return <NavigationWrap>{children}</NavigationWrap>;
@@ -27,31 +19,39 @@ export const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const links = [
-    { url: '/', label: 'Home', isActive: Boolean(router.pathname === '/') },
+    // {
+    //   url: '/about-me',
+    //   label: 'About me',
+    //   isActive: Boolean(router.pathname === '/about-me'),
+    // },
+    // {
+    //   url: '/experience',
+    //   label: 'Experience',
+    //   isActive: Boolean(router.pathname === '/experience'),
+    // },
+    // {
+    //   url: '/',
+    //   label: 'Home',
+    //   isActive: Boolean(router.pathname === '/'),
+    // },
     {
       url: '/contact',
-      label: 'Contact',
+      label: 'Contact Me',
       isActive: Boolean(router.pathname === '/contact'),
-    },
-    {
-      url: '/services',
-      label: 'Services',
-      isActive: Boolean(router.pathname === '/services'),
-    },
-    {
-      url: '/about-us',
-      label: 'About us',
-      isActive: Boolean(router.pathname === '/about-us'),
     },
   ];
 
   return (
     <NavigationWrapper>
-      <LogoWrap>
-        <Link href="/">
-          <img src="melmac-logistics-logo.svg" height={76} width={76} />
-        </Link>
-      </LogoWrap>
+      <StyledLink
+        isActive={Boolean(router.pathname === '/')}
+        href={'/'}
+        onClick={() => {
+          setIsOpen(false);
+        }}
+      >
+        Eriq Quatkemeyer
+      </StyledLink>
       <MobileLinks isOpen={isOpen} setIsOpen={setIsOpen} />
       <LinksWrap isOpen={isOpen}>
         {links.map(({ url, label, isActive }, index) => (
@@ -73,8 +73,6 @@ export const Navigation = () => {
 
 export default Navigation;
 
-const logoHeightLarge = '4rem';
-const logoHeight = '3.5rem';
 const NavigationWrap = styled('div', {
   width: '100%',
   zIndex: 10,
@@ -82,23 +80,18 @@ const NavigationWrap = styled('div', {
   justifyContent: 'space-between',
   gap: '60px',
   alignItems: 'center',
-  padding: '1rem .5rem 0rem .5rem',
-
+  padding: '1.5rem 1.5rem 0rem 1.5rem',
+  height: '6rem',
   '@tablet': {
-    padding: '2rem 2rem 0rem 1.2rem',
-  },
-});
-
-const LogoWrap = styled('div', {
-  minHeight: logoHeight,
-  '@tablet': {
-    minHeight: logoHeightLarge,
+    height: 'auto',
+    padding: '2rem 2rem 1rem 2rem',
   },
 });
 
 const LinksWrap = styled('div', {
   display: 'flex',
   transition: '.3s',
+  backgroundColor: '$background',
 
   variants: {
     isOpen: {
@@ -116,11 +109,11 @@ const LinksWrap = styled('div', {
         top: '95px',
         left: '0px',
         flexDirection: 'column',
-        backgroundColor: '$grey',
+        backgroundColor: '$background',
         opacity: 1,
       },
       false: {
-        borderTop: '1px solid $grey',
+        borderTop: '1px solid $background',
         position: 'fixed',
         left: '0px',
         bottom: '100%',
@@ -135,19 +128,26 @@ const LinksWrap = styled('div', {
 
 const StyledLink = styled(Link, {
   alignSelf: 'center',
-  fontWeight: '$bold',
+  fontWeight: '$semiBold',
   fontSize: '$h3',
   textDecoration: 'none',
-  color: '$greyBlack',
+  textTransform: 'uppercase',
+  color: '$primary',
   whiteSpace: 'noWrap',
   padding: '.5rem 0',
   alignItems: 'center',
+
   cursor: 'pointer',
   variants: {
     isActive: {
       true: {
-        color: '$primary',
+        fontWeight: '$bold',
         borderBottom: '2px solid $primary',
+      },
+      false: {
+        borderBottom: '2px solid $background',
+        margin: '0rem',
+        padding: '0rem',
       },
     },
   },
@@ -156,12 +156,11 @@ const StyledLink = styled(Link, {
     margin: '0 .25rem',
     display: 'flex',
     height: '2rem',
-    width: '100%',
+    // width: '100%',
     flexDirection: 'row',
     alignItems: 'center',
     transition: '$shortHover',
     '&:hover': {
-      // backgroundColor: '#999999',
       opacity: 0.5,
     },
   },

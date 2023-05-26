@@ -1,7 +1,8 @@
-import { styled } from '../../stitches.config';
 import { useEffect } from 'react';
 import useWindowDimensions from './hooks/useWindowViews';
 import { CloseIcon, OpenIcon } from '../icons';
+
+import { styled } from '../../stitches.config';
 
 export const MobileLinks = ({
   isOpen,

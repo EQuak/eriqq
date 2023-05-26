@@ -3,9 +3,10 @@ import { styled } from '../stitches.config';
 
 const CustomPageLayout = styled('div', {
   height: '100%',
-  paddingTop: '8rem',
+  paddingTop: '6rem',
+
   '@tablet': {
-    paddingTop: '9rem',
+    paddingTop: '6rem',
   },
 });
 
@@ -15,7 +16,7 @@ interface CustomPageProps {
 }
 
 export const Page = (props: CustomPageProps) => {
-  const title = `${props.title} - Melmac`;
+  const title = `${props.title} - eriqq`;
   return (
     <>
       <Head>

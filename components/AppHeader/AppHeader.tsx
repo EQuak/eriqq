@@ -1,5 +1,6 @@
-import { styled } from '../../stitches.config';
 import { Navigation } from './Navigation';
+
+import { styled } from '../../stitches.config';
 
 export const AppHeader = () => {
   return (
@@ -17,6 +18,6 @@ const AppHeaderWrap = styled('header', {
   alignItems: 'center',
   position: 'fixed',
   width: '100%',
-  background: '$grey',
+  background: '$background',
   zIndex: 99999,
 });
