@@ -173,7 +173,7 @@ const ImageWrap = styled('div', {
   display: 'flex',
   width: '100%',
   height: '100%',
-
+  borderRadius: '15px',
   position: 'relative',
   overflow: 'hidden',
   img: {
