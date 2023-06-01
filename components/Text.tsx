@@ -27,37 +27,31 @@ export const Text = styled('div', {
       },
       body: {
         fontSize: '$detail',
+        lineHeight: '24px',
+
         '@tablet': {
           fontSize: '$body',
-        },
-        lineHeight: '1.5rem',
-      },
-
-      detail: {
-        fontSize: '$label',
-        '@tablet': {
-          fontSize: '$detail',
-          lineHeight: '1.25rem',
+          lineHeight: '28px',
         },
       },
       small: {
-        fontSize: '$small',
+        fontSize: '$h3',
         lineHeight: '1rem',
       },
-      large: {
-        fontSize: '$h3',
+      medium: {
+        fontSize: '$h2',
         lineHeight: '1.5rem',
+      },
+      large: {
+        fontSize: '$h1',
+        lineHeight: '2rem',
+        '@desktop': {
+          lineHeight: '2.5rem',
+        },
       },
       xlarge: {
         fontSize: '$hTest',
         lineHeight: '2rem',
-      },
-      xxlarge: {
-        lineHeight: '2rem',
-        fontSize: '$h1',
-        '@desktop': {
-          lineHeight: '2.5rem',
-        },
       },
     },
     type: {
@@ -83,20 +77,23 @@ export const Text = styled('div', {
       inherit: {
         color: 'inherit',
       },
-      grey: {
-        color: '$grey',
-      },
-      primary: {
-        color: '$primary',
+      black: {
+        color: '$black',
       },
       white: {
         color: '$white',
       },
+      primary: {
+        color: '$primary',
+      },
+      grey: {
+        color: '$grey',
+      },
+      greyBlack: {
+        color: '$greyBlack',
+      },
       background: {
         color: '$background',
-      },
-      disabled: {
-        color: '$tertiary700',
       },
       red: {
         color: '$red',

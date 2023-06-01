@@ -10,7 +10,7 @@ import InformationRow from '../InformationRow';
 export function HomePage() {
   return (
     <Page title="Home">
-      <Content2>
+      <Content>
         <InfoWrap>
           <Text size={'title'} weight={'bold'}>
             Hello, I am Eriq
@@ -29,7 +29,7 @@ export function HomePage() {
             placeholder="blur"
           />
         </ImageWrap>
-      </Content2>
+      </Content>
       <Section>
         <Text size={'title'} weight={'bold'}>
           About me
@@ -38,7 +38,7 @@ export function HomePage() {
           I am 25 years old and currently live in San Tan Valley, Arizona. I
           have two dogs named Bindi and Dale. In my free time, I enjoy fishing,
           golfing, playing pickleball, and even snowboarding when the
-          opportunity arises. On quieter days, I indulge my inner movie
+          opportunity arises. On quieter days, I indulge in my inner movie
           enthusiast, bowling and occasionally build Lego's where I proudly
           consider myself a Star Wars nerd. When I am not pursuing my hobbies, I
           value the quality time I spend with my friends and family. I have
@@ -58,7 +58,7 @@ export function HomePage() {
             date="Feb 2014 - Jan 2016"
             company="Pizza Hut"
           >
-            <Text>
+            <>
               Pizza Hut was my first job as soon as I got my drivers license. As
               a team member, my role encompassed various responsibilities within
               the restaurant's operations. My primary duty was to take customer
@@ -70,7 +70,7 @@ export function HomePage() {
               organization in the kitchen. Working at Pizza Hut helped build
               communication skills and the ability to work in a fast-paced
               environment.
-            </Text>
+            </>
           </InformationRow>
           <InformationRow
             title="Floor Employee"
@@ -78,7 +78,7 @@ export function HomePage() {
             company="Fidelitone, llc"
             companyInherited="Total Solutions, llc"
           >
-            <Text>
+            <>
               As a Floor employee at Fidelitone, I was rotated around several
               different warehouse operations. Utilizing heavy machinery, such as
               eclectic pallet jacks, I loaded and unloaded pallets in semi
@@ -99,14 +99,14 @@ export function HomePage() {
               labels and placed them on pallets based on shipping methods. I
               believe I made significant contributions to the overall success in
               the fast-paced warehousing and logistics functions of Fidelitone.
-            </Text>
+            </>
           </InformationRow>
           <InformationRow
             title="Associate Engineer"
             date="Feb 2018 - Jan 2023"
             company="Sibi, llc"
           >
-            <Text>
+            <>
               Working at Sibi, I learned many new things around coding and
               collaborating with others. I started as Sibi cleaning up and
               consolidating data on spreadsheets. This was a manual process
@@ -126,31 +126,30 @@ export function HomePage() {
               part in providing ideas and solutions. Working at Sibi, I
               developed many skills around troubleshooting, problem solving and
               brainstorming for these features.
-            </Text>
+            </>
           </InformationRow>
         </InformationRowsWrap>
       </Section>
-      {/* <Section>
-        <Text size={'title'} weight={'bold'}>
-          Reviews
-        </Text>
-      </Section> */}
       <Spacing />
     </Page>
   );
 }
 
-const Content2 = styled('div', {
+const Content = styled('div', {
   display: 'flex',
   flexDirection: 'column',
   width: '100%',
   height: 'calc(100% - 60px)',
 
+  gap: '2rem',
   alignItems: 'center',
 
   padding: '0rem 1.5rem',
 
   '@tablet': {
+    height: 'fit-content',
+    gap: '2rem',
+
     flexDirection: 'row',
     padding: '0rem 2rem',
   },
@@ -161,12 +160,8 @@ const InfoWrap = styled('div', {
   flexDirection: 'column',
   gap: '2rem',
   width: '100%',
-  height: '50%',
+  height: '30%',
   justifyContent: 'center',
-
-  '@tablet': {
-    height: '100%',
-  },
 });
 
 const ImageWrap = styled('div', {
@@ -182,7 +177,7 @@ const ImageWrap = styled('div', {
     opacity: 0.9,
     margin: 0,
     width: '100%',
-    height: '480px',
+    height: 'auto',
     '@tablet': {
       height: '100%',
     },
@@ -201,6 +196,7 @@ const Section = styled('div', {
     padding: '0rem 2rem',
   },
 });
+
 const Spacing = styled('div', {
   height: '5rem',
 });

@@ -20,7 +20,12 @@ export const InformationRow = ({
   return (
     <Wrap>
       <TitleWrap>
-        <Text decoration={'uppercase'} color={'primary'} weight={'semiBold'}>
+        <Text
+          decoration={'uppercase'}
+          color={'primary'}
+          weight={'semiBold'}
+          size={'small'}
+        >
           {title}
         </Text>
         <Text decoration={'uppercase'} color={'grey'} weight={'normal'}>
@@ -40,6 +45,7 @@ export const InformationRow = ({
               decoration={'uppercase'}
               style={{ paddingBottom: '.5rem' }}
               weight={'semiBold'}
+              size={'small'}
             >
               {companyInherited}
             </Text>
@@ -61,6 +67,7 @@ export const InformationRow = ({
               decoration={'uppercase'}
               style={{ paddingBottom: '.5rem' }}
               weight={'semiBold'}
+              size={'small'}
             >
               {company}
             </Text>
@@ -70,12 +77,13 @@ export const InformationRow = ({
             decoration={'uppercase'}
             style={{ paddingBottom: '.5rem' }}
             weight={'semiBold'}
+            size={'small'}
           >
             {company}
           </Text>
         )}
 
-        {children}
+        <Text size={'body'}>{children}</Text>
       </ContentWrap>
     </Wrap>
   );
@@ -94,7 +102,7 @@ const Wrap = styled('div', {
 
   borderRadius: '15px',
 
-  '@tablet': {
+  '@desktop': {
     flexDirection: 'row',
   },
 });

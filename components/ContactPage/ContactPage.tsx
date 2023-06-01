@@ -39,49 +39,49 @@ export function ContactPage() {
       <Content>
         <InformationWrap>
           <Form.Label>
-            <Text weight={'bold'} decoration={'uppercase'} size="xxlarge">
+            <Text weight={'bold'} decoration={'uppercase'} size="large">
               Get in touch
             </Text>
           </Form.Label>
           <Form.Row>
-            <Text weight={'bold'} decoration={'uppercase'} size="xlarge">
+            <Text weight={'bold'} decoration={'uppercase'} size="body">
               Email
             </Text>
-            <a href="mailto: eriq.quatkemeyer@hotmail.com">
-              <Text decoration={'uppercase'} size="xlarge">
+            <a target="_blank" href="mailto: eriq.quatkemeyer@hotmail.com">
+              <Text decoration={'uppercase'} size="body">
                 eriq.quatkemeyer@hotmail.com
               </Text>
             </a>
           </Form.Row>
           <Form.Row>
-            <Text weight={'bold'} decoration={'uppercase'} size="xlarge">
+            <Text weight={'bold'} decoration={'uppercase'} size="body">
               Phone
             </Text>
             <a href="tel:+4802842072">
-              <Text decoration={'uppercase'} size="xlarge">
+              <Text decoration={'uppercase'} size="body">
                 (480)-284-2072
               </Text>
             </a>
           </Form.Row>
           <Form.Row>
-            <Text weight={'bold'} decoration={'uppercase'} size="xlarge">
+            <Text weight={'bold'} decoration={'uppercase'} size="body">
               Location
             </Text>
-            <a href="mailto: eriq.quatkemeyer@hotmail.com">
-              <Text decoration={'uppercase'} size="xlarge">
+            <address>
+              <Text decoration={'uppercase'} size="body">
                 San Tan Valley, Arizona 85143
               </Text>
-            </a>
+            </address>
           </Form.Row>
         </InformationWrap>
         <FormWrap onSubmit={handleSubmit(onSubmit)} method="POST">
           <Form.Label>
-            <Text weight={'bold'} decoration={'uppercase'} size="xxlarge">
+            <Text weight={'bold'} decoration={'uppercase'} size="large">
               Send me a message
             </Text>
           </Form.Label>
           <Form.InputWithLabelWrap error={Boolean(errors.firstName)}>
-            <Text weight={'bold'} size="xlarge">
+            <Text weight={'bold'} size="body">
               First Name*
             </Text>
             <Form.InputV2 {...register('firstName', { required: true })} />
@@ -90,7 +90,7 @@ export function ContactPage() {
             </Form.Error>
           </Form.InputWithLabelWrap>
           <Form.InputWithLabelWrap error={Boolean(errors.lastName)}>
-            <Text weight={'bold'} size="xlarge">
+            <Text weight={'bold'} size="body">
               Last Name*
             </Text>
             <Form.InputV2 {...register('lastName', { required: true })} />
@@ -99,21 +99,21 @@ export function ContactPage() {
             </Form.Error>
           </Form.InputWithLabelWrap>
           <Form.InputWithLabelWrap error={Boolean(errors.email)}>
-            <Text weight={'bold'} size="xlarge">
+            <Text weight={'bold'} size="body">
               Email*
             </Text>
             <Form.InputV2 {...register('email', { required: true })} />
             <Form.Error>{errors.email && <>email is required.</>}</Form.Error>
           </Form.InputWithLabelWrap>
           <Form.InputWithLabelWrap error={Boolean(errors.phone)}>
-            <Text weight={'bold'} size="xlarge">
+            <Text weight={'bold'} size="body">
               Phone*
             </Text>
             <Form.InputV2 {...register('phone', { required: true })} />
             <Form.Error>{errors.phone && <>phone is required.</>} </Form.Error>
           </Form.InputWithLabelWrap>
           <Form.InputWithLabelWrap error={Boolean(errors.company)}>
-            <Text weight={'bold'} size="xlarge">
+            <Text weight={'bold'} size="body">
               Company*
             </Text>
             <Form.InputV2 {...register('company', { required: true })} />
@@ -122,7 +122,7 @@ export function ContactPage() {
             </Form.Error>
           </Form.InputWithLabelWrap>
           <Form.InputWithLabelWrap>
-            <Text weight={'bold'} size="xlarge">
+            <Text weight={'bold'} size="body">
               Message
             </Text>
             <Form.InputV2 {...register('message')} />

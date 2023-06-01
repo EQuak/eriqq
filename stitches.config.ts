@@ -4,9 +4,10 @@ const baseColors = {
   black: '#000000',
   white: '#FFFFFF',
   primary: '#61B194',
-  background: '#F2F5F6',
-  greyBlack: '#333333',
   grey: '#808080',
+  greyBlack: '#333333',
+  background: '#F2F5F6',
+  red: '#FF0000',
 };
 
 export const colors = {
@@ -20,6 +21,7 @@ export const fontSizes = {
   h2: '1.5rem', // 24px
   h3: '1.125rem', // 18px
   body: '1rem', // 16px
+  detail: '1.125rem', // 18px
 };
 
 export const { styled, css, globalCss, keyframes, getCssText } = createStitches(
@@ -30,9 +32,10 @@ export const { styled, css, globalCss, keyframes, getCssText } = createStitches(
         black: colors.black,
         white: colors.white,
         primary: colors.primary,
-        background: colors.background,
-        greyBlack: colors.greyBlack,
         grey: colors.grey,
+        greyBlack: colors.greyBlack,
+        background: colors.background,
+        red: colors.red,
       },
       fontSizes,
       fontWeights: {
