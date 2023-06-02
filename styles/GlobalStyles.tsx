@@ -12,15 +12,14 @@ export const globalStyles = globalCss({
 
     footer: {
       backgroundColor: '$background',
-      position: 'fixed',
-      bottom: 0,
       width: '100%',
-      height: '60px' /* Height of the footer */,
+      height: '80px' /* Height of the footer */,
       borderTop: '1px solid $primary',
       color: '$primary',
       display: 'flex',
       alignItems: 'center',
       flexDirection: 'row-reverse',
+      marginTop: '4rem',
     },
   },
 

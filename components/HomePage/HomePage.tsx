@@ -130,7 +130,6 @@ export function HomePage() {
           </InformationRow>
         </InformationRowsWrap>
       </Section>
-      <Spacing />
     </Page>
   );
 }
@@ -195,10 +194,6 @@ const Section = styled('div', {
   '@tablet': {
     padding: '0rem 2rem',
   },
-});
-
-const Spacing = styled('div', {
-  height: '5rem',
 });
 
 const InformationRowsWrap = styled('div', {

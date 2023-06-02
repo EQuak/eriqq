@@ -2,7 +2,7 @@ import Head from 'next/head';
 import { styled } from '../stitches.config';
 
 const CustomPageLayout = styled('div', {
-  height: '100%',
+  // height: '100%',
   paddingTop: '6rem',
 
   '@tablet': {
