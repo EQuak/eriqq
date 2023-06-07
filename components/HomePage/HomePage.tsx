@@ -55,7 +55,7 @@ export function HomePage() {
         <InformationRowsWrap>
           <InformationRow
             title="Team Member"
-            date="Feb 2014 - Jan 2016"
+            date="Nov 2014 - Oct 2015"
             company="Pizza Hut"
           >
             <>
@@ -74,14 +74,14 @@ export function HomePage() {
           </InformationRow>
           <InformationRow
             title="Floor Employee"
-            date="Feb 2016 - Jan 2018"
+            date="Oct 2015 - Nov 2017"
             company="Fidelitone, llc"
             companyInherited="Total Solutions, llc"
           >
             <>
               As a Floor employee at Fidelitone, I was rotated around several
               different warehouse operations. Utilizing heavy machinery, such as
-              eclectic pallet jacks, I loaded and unloaded pallets in semi
+              electric pallet jacks, I loaded and unloaded pallets in semi
               trucks and put them in the correct spot throughout the warehouse.
               I also typically ran the box folding machines and was one of the
               go to employees to help troubleshoot issues that came about on
@@ -103,7 +103,7 @@ export function HomePage() {
           </InformationRow>
           <InformationRow
             title="Associate Engineer"
-            date="Feb 2018 - Jan 2023"
+            date="Jan 2018 - April 2023"
             company="Sibi, llc"
           >
             <>
