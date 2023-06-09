@@ -145,13 +145,17 @@ const Content = styled('div', {
   justifyContent: 'space-between',
   gap: '2rem',
 
-  padding: '0rem 1.5rem 5rem 1.5rem',
+  padding: '0rem 1rem 5rem 1rem',
 
   '@tablet': {
-    gap: '6rem',
+    gap: '4rem',
 
+    padding: '0rem 2rem',
+  },
+  '@desktop': {
     flexDirection: 'row',
-    padding: '0rem 2rem 5rem 2rem',
+
+    gap: '6rem',
   },
 });
 

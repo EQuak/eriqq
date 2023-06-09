@@ -8,6 +8,7 @@ const baseColors = {
   greyBlack: '#333333',
   background: '#F2F5F6',
   red: '#FF0000',
+  blue: '#5265c4',
 };
 
 export const colors = {
@@ -36,6 +37,7 @@ export const { styled, css, globalCss, keyframes, getCssText } = createStitches(
         greyBlack: colors.greyBlack,
         background: colors.background,
         red: colors.red,
+        blue: colors.blue,
       },
       fontSizes,
       fontWeights: {

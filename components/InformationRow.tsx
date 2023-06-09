@@ -22,7 +22,7 @@ export const InformationRow = ({
       <TitleWrap>
         <Text
           decoration={'uppercase'}
-          color={'primary'}
+          color={'blue'}
           weight={'semiBold'}
           size={'small'}
         >
@@ -93,15 +93,19 @@ const Wrap = styled('div', {
   display: 'flex',
   flexDirection: 'column',
   gap: '1rem',
-  padding: '1rem',
-  border: '1px solid $primary',
-  boxShadow: '0px 2px 8px rgba(0, 0, 0, 0.4)',
+  padding: '0rem',
+
+  // padding: '1rem',
+  // border: '1px solid $primary',
+  // boxShadow: '0px 2px 8px rgba(0, 0, 0, 0.4)',
   background: '$background',
   //   borderRadius: '30px',
   //   borderBottom: '2px solid $primary',
 
   borderRadius: '15px',
-
+  '@tablet': {
+    padding: '.5rem',
+  },
   '@desktop': {
     flexDirection: 'row',
   },
