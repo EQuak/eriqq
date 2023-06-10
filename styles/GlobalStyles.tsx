@@ -13,7 +13,7 @@ export const globalStyles = globalCss({
     footer: {
       backgroundColor: '$background',
       width: '100%',
-      height: '80px' /* Height of the footer */,
+      height: '60px' /* Height of the footer */,
       borderTop: '1px solid $primary',
       color: '$primary',
       display: 'flex',

@@ -2,7 +2,7 @@ import Page from '../Page';
 import Text from '../Text';
 import Button from '../Button';
 import Image from 'next/image';
-import primaryImage from '../../public/IMG_3055.jpg';
+import primaryImage from '../../public/assets/IMG_3055.jpg';
 
 import { styled } from '../../stitches.config';
 import InformationRow from '../InformationRow';
@@ -19,7 +19,7 @@ export function HomePage() {
             style={{ width: 'fit-content' }}
             href="mailto: eriq.quatkemeyer@hotmail.com"
           >
-            <Button>Send me an email</Button>
+            <Button theme={'blue'}>Send me an email</Button>
           </a>
         </InfoWrap>
         <ImageWrap>
@@ -138,12 +138,12 @@ const Content = styled('div', {
   display: 'flex',
   flexDirection: 'column',
   width: '100%',
-  height: 'calc(100% - 60px)',
+  height: 'calc(100% - 80px)',
 
   gap: '2rem',
   alignItems: 'center',
 
-  padding: '0rem 1.5rem',
+  padding: '0rem 1rem',
 
   '@tablet': {
     height: 'fit-content',
@@ -199,5 +199,8 @@ const Section = styled('div', {
 const InformationRowsWrap = styled('div', {
   display: 'flex',
   flexDirection: 'column',
-  gap: '1.5rem',
+  gap: '2rem',
+  '@tablet': {
+    gap: '2rem',
+  },
 });

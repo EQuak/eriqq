@@ -1,5 +1,4 @@
 import { Navigation } from './Navigation';
-
 import { styled } from '../../stitches.config';
 
 export const AppHeader = () => {
@@ -14,10 +13,13 @@ export default AppHeader;
 
 const AppHeaderWrap = styled('header', {
   display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
   position: 'fixed',
   width: '100%',
-  background: '$background',
-  zIndex: 99999,
+  zIndex: 999,
+  height: '60px',
+  background: '$blue',
+
+  '@tablet': {
+    height: '80px',
+  },
 });

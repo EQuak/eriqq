@@ -1,49 +1,34 @@
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
+import { colors, styled } from '../../stitches.config';
 
-import { MobileLinks } from './MobileLinks';
-
-import { styled } from '../../stitches.config';
-
-interface NavigationWrapperProps {
-  children?: React.ReactNode;
-}
-
-function NavigationWrapper({ children }: NavigationWrapperProps) {
-  return <NavigationWrap>{children}</NavigationWrap>;
+interface LinkProps {
+  url: string;
+  label: string;
+  isActive: boolean;
 }
 
 export const Navigation = () => {
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
-
-  const links = [
-    // {
-    //   url: '/about-me',
-    //   label: 'About me',
-    //   isActive: Boolean(router.pathname === '/about-me'),
-    // },
-    // {
-    //   url: '/experience',
-    //   label: 'Experience',
-    //   isActive: Boolean(router.pathname === '/experience'),
-    // },
-    // {
-    //   url: '/',
-    //   label: 'Home',
-    //   isActive: Boolean(router.pathname === '/'),
-    // },
+  const links: LinkProps[] = [
     {
       url: '/contact',
       label: 'Contact Me',
       isActive: Boolean(router.pathname === '/contact'),
     },
+    {
+      url: '/resume',
+      label: 'Resume',
+      isActive: Boolean(router.pathname === '/resume'),
+    },
   ];
 
   return (
-    <NavigationWrapper>
+    <NavBar>
       <StyledLink
+        className="logo"
         isActive={Boolean(router.pathname === '/')}
         href={'/'}
         onClick={() => {
@@ -52,114 +37,189 @@ export const Navigation = () => {
       >
         Eriq Quatkemeyer
       </StyledLink>
-      <MobileLinks isOpen={isOpen} setIsOpen={setIsOpen} />
-      <LinksWrap isOpen={isOpen}>
+      <label className="nav-toggle">
+        <input
+          type="checkbox"
+          checked={isOpen}
+          onChange={() => setIsOpen(!isOpen)}
+        />
+      </label>
+      <div className="menu">
         {links.map(({ url, label, isActive }, index) => (
-          <StyledLink
-            isActive={isActive}
-            href={url}
-            key={`${label}-${index}`}
-            onClick={() => {
-              setIsOpen(false);
-            }}
-          >
-            {label}
-          </StyledLink>
+          <li key={`${label}-${index}`}>
+            <StyledLink
+              key={`${label}-${index}`}
+              href={url}
+              isActive={isActive}
+              onClick={() => setIsOpen(false)}
+            >
+              {label}
+            </StyledLink>
+          </li>
         ))}
-      </LinksWrap>
-    </NavigationWrapper>
+      </div>
+    </NavBar>
   );
 };
 
 export default Navigation;
 
-const NavigationWrap = styled('div', {
+const NavBar = styled('div', {
+  backgroundColor: '$blue',
+  position: 'fixed',
   width: '100%',
-  zIndex: 10,
-  display: 'flex',
-  justifyContent: 'space-between',
-  gap: '60px',
-  alignItems: 'center',
-  padding: '1.5rem 1.5rem 0rem 1.5rem',
-  height: '6rem',
-  '@tablet': {
-    height: 'auto',
-    padding: '2rem 2rem 1rem 2rem',
+
+  div: {
+    margin: 0,
+    padding: 0,
+    listStyle: 'none',
+    overflow: 'hidden',
   },
-});
+  'li a': {
+    display: 'block',
+    padding: '.5rem',
+    '@tablet': {
+      padding: '.25rem',
+    },
+  },
 
-const LinksWrap = styled('div', {
-  display: 'flex',
-  transition: '.3s',
-  backgroundColor: '$background',
+  'li a:hover, .menu-btn:hover': {
+    opacity: 0.6,
+  },
 
-  variants: {
-    isOpen: {
-      true: {
-        width: '100%',
-        a: {
-          width: '100%',
-          textAlign: 'center',
-          '&:hover': {
-            opacity: 0.4,
-          },
-        },
+  '.logo': {
+    display: 'block',
+    position: 'absolute',
+    top: '.75rem',
+    left: '1rem',
+    textDecoration: 'none',
+    '@tablet': {
+      top: '1.5rem',
+      left: '1.5rem',
+    },
+  },
 
-        position: 'fixed',
-        top: '95px',
-        left: '0px',
-        flexDirection: 'column',
-        backgroundColor: '$background',
-        opacity: 1,
-      },
-      false: {
-        borderTop: '1px solid $background',
-        position: 'fixed',
-        left: '0px',
-        bottom: '100%',
-        '@tablet': {
-          display: 'flex',
-          position: 'relative',
-        },
+  '.nav-toggle:has(input:checked) ~ .menu': {
+    maxHeight: '240px',
+  },
+
+  '.nav-toggle': {
+    cursor: 'pointer',
+    display: 'inline-block',
+    float: 'right',
+    position: 'absolute',
+    top: '1rem',
+    right: '1rem',
+    // width: '60px',
+    // height: '60px',
+  },
+
+  '.nav-toggle input': {
+    appearance: 'none',
+    padding: 0,
+    margin: 0,
+    outline: 'none',
+    pointerEvents: 'none',
+  },
+
+  '.nav-toggle > input': {
+    position: 'relative',
+    width: '32px',
+    height: '2px',
+    background: '$greyBlack',
+    transition: 'all 0.45s ease-in-out',
+  },
+
+  '.nav-toggle > input::before, .nav-toggle > input::after': {
+    content: '',
+    position: 'absolute',
+    height: '2px',
+    background: '$greyBlack',
+    borderRadius: '2px',
+    transition: 'all 0.45s ease-in-out',
+  },
+
+  '.nav-toggle > input::before': {
+    width: '25px',
+    transform: 'translateY(-8px)',
+    right: 0,
+  },
+
+  '.nav-toggle > input::after': {
+    width: '32px',
+    transform: 'translateY(8px)',
+  },
+
+  '.nav-toggle:has(input:checked) > input': {
+    transform: 'translateX(-40px)',
+    background: 'transparent',
+  },
+
+  '.nav-toggle:has(input:checked) > input::before': {
+    width: '32px',
+    transform: 'rotate(45deg) translate(26px, -26px)',
+  },
+
+  '.nav-toggle:has(input:checked) > input::after': {
+    transform: 'rotate(-45deg) translate(26px, 26px)',
+  },
+
+  '.menu': {
+    clear: 'both',
+    maxHeight: 0,
+    transition: 'max-height 0.45s ease-out',
+    paddingTop: '60px',
+    '@tablet': {
+      paddingTop: '80px',
+    },
+  },
+  '@tablet': {
+    '.nav-toggle': {
+      display: 'none',
+    },
+    li: {
+      float: 'left',
+    },
+    'li a': {
+      marginLeft: '1rem',
+    },
+    '.menu': {
+      paddingTop: '0px',
+      position: 'fixed',
+      clear: 'none',
+      float: 'right',
+      top: '1rem',
+      right: '1rem',
+      maxHeight: 'none',
+
+      '@tablet': {
+        top: '1.5rem',
+        right: '1.5rem',
       },
     },
   },
 });
 
 const StyledLink = styled(Link, {
-  alignSelf: 'center',
   fontWeight: '$semiBold',
   fontSize: '$h3',
-  textDecoration: 'none',
-  textTransform: 'uppercase',
-  color: '$primary',
-  whiteSpace: 'noWrap',
-  padding: '.5rem 0',
+  color: colors.background,
   alignItems: 'center',
-
+  textAlign: 'center',
   cursor: 'pointer',
+  padding: '0.25rem',
   variants: {
     isActive: {
       true: {
-        fontWeight: '$bold',
-        borderBottom: '2px solid $primary',
+        border: '3px solid $primary',
       },
       false: {
-        borderBottom: '2px solid $background',
-        margin: '0rem',
-        padding: '0rem',
+        border: '3px solid $blue',
       },
     },
   },
   '@tablet': {
-    padding: '0 0.75rem',
-    margin: '0 .25rem',
-    display: 'flex',
-    height: '2rem',
-    // width: '100%',
-    flexDirection: 'row',
     alignItems: 'center',
-    transition: '$shortHover',
     '&:hover': {
       opacity: 0.5,
     },

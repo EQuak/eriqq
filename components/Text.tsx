@@ -98,6 +98,9 @@ export const Text = styled('div', {
       red: {
         color: '$red',
       },
+      blue: {
+        color: '$blue',
+      },
     },
   },
 });

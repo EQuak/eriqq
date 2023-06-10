@@ -2,9 +2,15 @@ import Head from 'next/head';
 import { styled } from '../stitches.config';
 
 const CustomPageLayout = styled('div', {
-  // height: '100%',
   paddingTop: '6rem',
-
+  height: 'auto',
+  variants: {
+    fullPage: {
+      true: {
+        height: 'calc(100% - 124px)',
+      },
+    },
+  },
   '@tablet': {
     paddingTop: '6rem',
   },
@@ -12,6 +18,7 @@ const CustomPageLayout = styled('div', {
 
 interface CustomPageProps {
   title: string;
+  fullPage?: boolean;
   children: React.ReactNode;
 }
 
@@ -22,7 +29,9 @@ export const Page = (props: CustomPageProps) => {
       <Head>
         <title>{title}</title>
       </Head>
-      <CustomPageLayout>{props.children}</CustomPageLayout>
+      <CustomPageLayout fullPage={props.fullPage}>
+        {props.children}
+      </CustomPageLayout>
     </>
   );
 };
