@@ -1,4 +1,6 @@
 import { styled } from '../../stitches.config';
+import Image from 'next/image';
+import resumeImage from '../../public/assets/IMG_1.png';
 import Link from 'next/link';
 import Button from '../Button';
 import Text from '../Text';
@@ -6,20 +8,20 @@ import Page from '../Page';
 
 export function ResumePage() {
   return (
-    <Page title="Resume" fullPage>
+    <Page title="Resume">
       <Content>
         <Text size={'title'} weight={'bold'}>
           Thank you for taking a look!
         </Text>
-        <Text size={'large'} weight={'semiBold'}>
-          Click the button below to view a pdf of my resume
-        </Text>
+        <Image src={resumeImage} alt={''} placeholder="blur" />
         <Link
           href="https://eriqq.notion.site/Eriq-Quatkemeyer-Resume-d3b4574e0e024c3fb5bd4a94c19f2f5e?pvs=4"
           passHref
           target={'_blank'}
         >
-          <Button theme={'blue'}>Click here to view a downloadable PDF</Button>
+          <Button width={'inline'} theme={'blue'}>
+            View a downloadable PDF
+          </Button>
         </Link>
       </Content>
     </Page>
@@ -31,16 +33,21 @@ const Content = styled('div', {
   flexDirection: 'column',
   width: '100%',
   height: '100%',
-  // justifyContent: 'space-between',
-
+  alignItems: 'center',
   textAlign: 'center',
   gap: '2rem',
 
-  padding: '0rem 1rem 5rem 1rem',
-
+  padding: '0rem 1rem 0rem 1rem',
+  img: {
+    display: 'flex',
+    height: 'fit-content',
+    width: '100vw',
+    maxWidth: 'fit-content',
+    padding: '1rem',
+  },
   '@tablet': {
     height: '100%',
-    gap: '4rem',
-    padding: '0rem 2rem',
+    gap: '2rem',
+    padding: '2rem 2rem 0rem 2rem',
   },
 });
