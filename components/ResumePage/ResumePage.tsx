@@ -1,6 +1,6 @@
 import { styled } from '../../stitches.config';
 import Image from 'next/image';
-import resumeImage from '../../public/assets/IMG_1.png';
+import resumeImage from '../../public/assets/eq-resume.png';
 import Link from 'next/link';
 import Button from '../Button';
 import Text from '../Text';
