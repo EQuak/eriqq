@@ -7,7 +7,7 @@ export const globalStyles = globalCss({
     fontSize: '16px',
     boxSizing: 'border-box',
     height: '100%',
-    fontFamily: "'Inter',sans-serif",
+    fontFamily: "'CerebriSans',sans-serif",
     backgroundColor: '$background',
 
     footer: {

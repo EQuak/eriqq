@@ -1,12 +1,12 @@
 import { createStitches } from '@stitches/react';
 
 const baseColors = {
-  black: '#000000',
+  background: '#FFFFFF',
   white: '#FFFFFF',
+  black: '#000000',
   primary: '#61B194',
   grey: '#808080',
   greyBlack: '#333333',
-  background: '#F2F5F6',
   red: '#FF0000',
   blue: '#5265c4',
 };
@@ -15,15 +15,7 @@ export const colors = {
   ...baseColors,
 };
 
-export const fontSizes = {
-  title: '3rem', // 48px
-  subTitle: '2.5rem', // 40px
-  h1: '2rem', // 32px
-  h2: '1.5rem', // 24px
-  h3: '1.125rem', // 18px
-  body: '1rem', // 16px
-  detail: '1.125rem', // 18px
-};
+export const fontSizes = {};
 
 export const { styled, css, globalCss, keyframes, getCssText } = createStitches(
   {
@@ -49,7 +41,7 @@ export const { styled, css, globalCss, keyframes, getCssText } = createStitches(
         extraBold: '800',
       },
       fonts: {
-        base: "'Inter',sans-serif",
+        base: "'CerebriSans',sans-serif",
       },
       shadows: {},
       transitions: {
