@@ -26,39 +26,42 @@ export const Navigation = () => {
   ];
 
   return (
-    <NavBar>
-      <StyledLink
-        className="logo"
-        isActive={Boolean(router.pathname === '/')}
-        href={'/'}
-        onClick={() => {
-          setIsOpen(false);
-        }}
-      >
-        Eriq Quatkemeyer
-      </StyledLink>
-      <label className="nav-toggle">
-        <input
-          type="checkbox"
-          checked={isOpen}
-          onChange={() => setIsOpen(!isOpen)}
-        />
-      </label>
-      <div className="menu">
-        {links.map(({ url, label, isActive }, index) => (
-          <li key={`${label}-${index}`}>
-            <StyledLink
-              key={`${label}-${index}`}
-              href={url}
-              isActive={isActive}
-              onClick={() => setIsOpen(false)}
-            >
-              {label}
-            </StyledLink>
-          </li>
-        ))}
-      </div>
-    </NavBar>
+    <>
+      <Overlay isOpen={isOpen} onClick={() => setIsOpen(!isOpen)} />
+      <NavBar>
+        <StyledLink
+          className="logo"
+          isActive={Boolean(router.pathname === '/')}
+          href={'/'}
+          onClick={() => {
+            setIsOpen(false);
+          }}
+        >
+          Eriq Quatkemeyer
+        </StyledLink>
+        <label className="nav-toggle">
+          <input
+            type="checkbox"
+            checked={isOpen}
+            onChange={() => setIsOpen(!isOpen)}
+          />
+        </label>
+        <div className="menu">
+          {links.map(({ url, label, isActive }, index) => (
+            <li key={`${label}-${index}`}>
+              <StyledLink
+                key={`${label}-${index}`}
+                href={url}
+                isActive={isActive}
+                onClick={() => setIsOpen(false)}
+              >
+                {label}
+              </StyledLink>
+            </li>
+          ))}
+        </div>
+      </NavBar>
+    </>
   );
 };
 
@@ -68,6 +71,7 @@ const NavBar = styled('div', {
   backgroundColor: '$blue',
   position: 'fixed',
   width: '100%',
+  zIndex: 99999,
 
   div: {
     margin: 0,
@@ -90,7 +94,7 @@ const NavBar = styled('div', {
   '.logo': {
     display: 'block',
     position: 'absolute',
-    top: '.75rem',
+    top: '1rem',
     left: '1rem',
     textDecoration: 'none',
     '@tablet': {
@@ -108,6 +112,7 @@ const NavBar = styled('div', {
     display: 'inline-block',
     float: 'right',
     position: 'absolute',
+    // zIndex: 9999999999999,
     top: '1rem',
     right: '1rem',
     // width: '60px',
@@ -184,8 +189,8 @@ const NavBar = styled('div', {
       marginLeft: '1rem',
     },
     '.menu': {
-      paddingTop: '0px',
-      position: 'fixed',
+      padding: '0rem 1rem',
+      zIndex: 99999,
       clear: 'none',
       float: 'right',
       top: '1rem',
@@ -193,8 +198,10 @@ const NavBar = styled('div', {
       maxHeight: 'none',
 
       '@tablet': {
+        position: 'absolute',
+
         top: '1.5rem',
-        right: '1.5rem',
+        right: '.5rem',
       },
     },
   },
@@ -202,19 +209,16 @@ const NavBar = styled('div', {
 
 const StyledLink = styled(Link, {
   fontWeight: '$semiBold',
-  fontSize: '$h3',
+  fontSize: '1.333rem',
   color: colors.background,
   alignItems: 'center',
   textAlign: 'center',
   cursor: 'pointer',
-  padding: '0.25rem',
+  transition: 'transform .2s',
   variants: {
     isActive: {
       true: {
-        border: '3px solid $primary',
-      },
-      false: {
-        border: '3px solid $blue',
+        color: '$primary',
       },
     },
   },
@@ -222,6 +226,27 @@ const StyledLink = styled(Link, {
     alignItems: 'center',
     '&:hover': {
       opacity: 0.5,
+      transform: 'scale(1.15)',
+    },
+  },
+});
+
+const Overlay = styled('div', {
+  display: 'none',
+  transition: 'all 0.45s ease-in-out',
+
+  variants: {
+    isOpen: {
+      true: {
+        display: 'block',
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        height: '100vh',
+        width: '100%',
+        backgroundColor: 'rgba(0, 0, 0, 0.7)',
+        zIndex: 10,
+      },
     },
   },
 });

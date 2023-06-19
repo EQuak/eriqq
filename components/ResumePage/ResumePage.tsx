@@ -5,14 +5,15 @@ import Link from 'next/link';
 import Button from '../Button';
 import Text from '../Text';
 import Page from '../Page';
+import { Text2 } from '../Text';
 
 export function ResumePage() {
   return (
     <Page title="Resume">
       <Content>
-        <Text size={'title'} weight={'bold'}>
+        <Text2 size={'h2'} weight={'bold'}>
           Thank you for taking a look!
-        </Text>
+        </Text2>
         <Image src={resumeImage} alt={''} placeholder="blur" />
         <Link
           href="https://eriqq.notion.site/Eriq-Quatkemeyer-Resume-d3b4574e0e024c3fb5bd4a94c19f2f5e?pvs=4"
@@ -48,6 +49,6 @@ const Content = styled('div', {
   '@tablet': {
     height: '100%',
     gap: '2rem',
-    padding: '2rem 2rem 0rem 2rem',
+    padding: '0rem 2rem 0rem 2rem',
   },
 });

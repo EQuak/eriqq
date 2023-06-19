@@ -23,7 +23,7 @@ export const Label = styled('div', {
 
 export const Error = styled('div', {
   fontWeight: '$normal',
-  fontSize: '$small',
+  fontSize: '14px',
   color: 'red',
   height: '1rem',
   alignItems: 'center',
@@ -31,36 +31,28 @@ export const Error = styled('div', {
 });
 
 export const InputWithLabelWrap = styled('div', {
-  display: 'flex',
-  // gridAutoRows: '1.5rem',
-  flexDirection: 'column',
-  // alignItems: 'center',
-  // borderRadius: '.75rem',
-  borderBottom: '1px solid grey',
-  paddingTop: '1rem',
-  // paddingBottom: '1rem',
-  // marginBottom: '.5rem',
-
-  variants: {
-    error: {
-      true: {
-        borderBottom: '1px solid red',
-      },
-    },
+  display: 'grid',
+  alignItems: 'center',
+  '.label': {
+    marginBottom: '.5rem',
+  },
+  '.required': {
+    color: 'red',
   },
 });
 
 export const InputV2 = styled('input', {
   display: 'block',
   width: '100%',
-  height: '2rem',
+  minHeight: '27px',
+  height: '35px',
   fontFamily: '$base',
-  border: 'none',
+  border: '1px solid #cbd6e2',
   outline: 'none',
-  fontSize: '$large',
+  fontSize: '1rem',
   fontWeight: '$normal',
   color: '$black',
-  backgroundColor: '#E8E8E8',
+  backgroundColor: '#f5f8fa',
   boxSizing: 'border-box',
   backgroundClip: 'padding-box',
   '-webkit-appearance': 'none',
@@ -68,23 +60,20 @@ export const InputV2 = styled('input', {
   appearance: 'none',
   transition: 'all 200ms ease',
   '&::placeholder': {
-    color: '$placeholderText',
     fontWeight: '$normal',
     fontStyle: 'italic',
   },
   '&:-ms-input-placeholder': {
-    color: '$placeholderText',
     fontWeight: '$normal',
     fontStyle: 'italic',
   },
-  // '&:hover': {},
   '&:active': {
     outline: 'none',
-    border: 'none',
+    border: '1px solid $primary',
   },
   '&:focus': {
     outline: 'none',
-    border: 'none',
+    border: '1px solid $primary',
   },
   '&:disabled': {
     opacity: 0.5,
@@ -92,14 +81,10 @@ export const InputV2 = styled('input', {
   variants: {
     invalid: {
       true: {
-        borderBottom: '1px solid red',
+        border: '1px solid red',
         color: '$greyBase',
         fontWeight: '$normal',
         fontStyle: 'italic',
-        outline: 0,
-        '&:focus': {
-          borderColor: 'red',
-        },
       },
     },
   },
