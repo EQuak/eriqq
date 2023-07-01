@@ -56,23 +56,31 @@ export function HomePage() {
         </Text2>
         <InformationRowsWrap>
           <InformationRow
-            title="Team Member"
-            date="Nov 2014 - Oct 2015"
-            company="Pizza Hut"
+            title="Associate Engineer"
+            date="Jan 2018 - April 2023"
+            company="Sibi, llc"
           >
             <Text2 size={'body'} weight={'light'}>
               <span>
-                Pizza Hut was my first job as soon as I got my drivers license.
-                As a team member, my role encompassed various responsibilities
-                within the restaurant's operations. My primary duty was to take
-                customer orders, either over the phone or in person, with a
-                welcoming attitude. I was responsible for inputting orders into
-                the system and making those orders along with contributing to
-                the overall efficiency of the restaurant by assisting with food
-                preparation, collaborating with teammates to maintain
-                cleanliness and organization in the kitchen. Working at Pizza
-                Hut helped build communication skills and the ability to work in
-                a fast-paced environment.
+                Working at Sibi, I learned many new things around coding and
+                collaborating with others. I started as Sibi cleaning up and
+                consolidating data on spreadsheets. This was a manual process
+                until I was given the opportunity to try and make this an
+                automated process with code. I collaborated with some of the
+                existing engineers and was able to create a script that scrapes
+                the data we wanted to capture. Shortly after, I started working
+                with multiple engineering teams, where I contributed to work in
+                technologies such as React, Node.js, JavaScript, and TypeScript
+                for both the frontend and backend of the software. Much of my
+                knowledge around coding was done through recommended online
+                courses & books and experience working with many different
+                senior developers from all different backgrounds. I quickly
+                picked up new processes to create clean, efficient and readable
+                code while collaborating with other team engineers to work on
+                existing features or develop new features from scratch where I
+                would take part in providing ideas and solutions. Working at
+                Sibi, I developed many skills around troubleshooting, problem
+                solving and brainstorming for these features.
               </span>
             </Text2>
           </InformationRow>
@@ -108,31 +116,23 @@ export function HomePage() {
             </Text2>
           </InformationRow>
           <InformationRow
-            title="Associate Engineer"
-            date="Jan 2018 - April 2023"
-            company="Sibi, llc"
+            title="Team Member"
+            date="Nov 2014 - Oct 2015"
+            company="Pizza Hut"
           >
             <Text2 size={'body'} weight={'light'}>
               <span>
-                Working at Sibi, I learned many new things around coding and
-                collaborating with others. I started as Sibi cleaning up and
-                consolidating data on spreadsheets. This was a manual process
-                until I was given the opportunity to try and make this an
-                automated process with code. I collaborated with some of the
-                existing engineers and was able to create a script that scrapes
-                the data we wanted to capture. Shortly after, I started working
-                with multiple engineering teams, where I contributed to work in
-                technologies such as React, Node.js, JavaScript, and TypeScript
-                for both the frontend and backend of the software. Much of my
-                knowledge around coding was done through recommended online
-                courses & books and experience working with many different
-                senior developers from all different backgrounds. I quickly
-                picked up new processes to create clean, efficient and readable
-                code while collaborating with other team engineers to work on
-                existing features or develop new features from scratch where I
-                would take part in providing ideas and solutions. Working at
-                Sibi, I developed many skills around troubleshooting, problem
-                solving and brainstorming for these features.
+                Pizza Hut was my first job as soon as I got my drivers license.
+                As a team member, my role encompassed various responsibilities
+                within the restaurant's operations. My primary duty was to take
+                customer orders, either over the phone or in person, with a
+                welcoming attitude. I was responsible for inputting orders into
+                the system and making those orders along with contributing to
+                the overall efficiency of the restaurant by assisting with food
+                preparation, collaborating with teammates to maintain
+                cleanliness and organization in the kitchen. Working at Pizza
+                Hut helped build communication skills and the ability to work in
+                a fast-paced environment.
               </span>
             </Text2>
           </InformationRow>
