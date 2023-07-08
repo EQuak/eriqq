@@ -1,4 +1,4 @@
-import { ContactPage } from '../../components';
+import { ContactPage } from '../lib';
 
 export const Contact = () => {
   return <ContactPage />;

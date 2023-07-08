@@ -1,66 +1,79 @@
-import Page from '../Page';
-import { Text2 } from '../Text';
-import Button from '../Button';
 import Image from 'next/image';
+
+import {
+  Page,
+  Button,
+  ContentContainer,
+  Section,
+  Text,
+  InformationRow,
+} from '../../components';
 import primaryImage from '../../public/assets/IMG_3055.jpg';
 
-import { styled } from '../../stitches.config';
-import InformationRow from '../InformationRow';
+import { colors, styled } from '../../stitches.config';
 
 export function HomePage() {
   return (
     <Page title="Home">
-      <Content>
-        <InfoWrap>
-          <Text2 size={'title'} weight={'bold'}>
-            Hello, I am Eriq
-          </Text2>
-          <a
-            style={{ width: 'fit-content' }}
-            href="mailto: eriq.quatkemeyer@hotmail.com"
-          >
-            <Button theme={'blue'}>Send me an email</Button>
-          </a>
-        </InfoWrap>
-        <ImageWrap>
-          <Image
-            src={primaryImage}
-            alt={'Eriq Quatkemeyer'}
-            placeholder="blur"
-          />
-        </ImageWrap>
-      </Content>
-      <Section>
-        <Text2 size={'h2'} weight={'bold'}>
-          About me
-        </Text2>
-        <Text2 size={'body'} weight={'light'}>
-          <span>
-            I am 25 years old and currently live in San Tan Valley, Arizona. I
-            have two dogs named Bindi and Dale. In my free time, I enjoy
-            fishing, golfing, playing pickleball, and even snowboarding when the
-            opportunity arises. On quieter days, I indulge in my inner movie
-            enthusiast, bowling and occasionally build Lego's where I proudly
-            consider myself a Star Wars nerd. When I am not pursuing my hobbies,
-            I value the quality time I spend with my friends and family. I have
-            previously worked in both remote and traditional office settings.
-            Looking for a role where I can learn from mistakes, collaborate with
-            different individuals, provide problem solving solutions and grow as
-            a person and employee.
-          </span>
-        </Text2>
+      <Section style={'header'} backgroundColor={colors.lightBlue}>
+        <ContentContainer>
+          <Content>
+            <InfoWrap>
+              <Text size={'title'} weight={'bold'}>
+                <span>Hello, I am Eriq</span>
+              </Text>
+              <a
+                style={{ width: 'fit-content' }}
+                href="mailto: eriq.quatkemeyer@hotmail.com"
+              >
+                <Button width={'inline'} theme={'blue'}>
+                  Send me an email
+                </Button>
+              </a>
+            </InfoWrap>
+            <ImageWrap>
+              <Image
+                src={primaryImage}
+                alt={'Eriq Quatkemeyer'}
+                placeholder="blur"
+              />
+            </ImageWrap>
+          </Content>
+        </ContentContainer>
       </Section>
       <Section>
-        <Text2 size={'h2'} weight={'bold'}>
-          Experience
-        </Text2>
-        <InformationRowsWrap>
+        <ContentContainer>
+          <Text size={'h2'} weight={'bold'}>
+            About me
+          </Text>
+          <Text size={'body'} weight={'light'}>
+            <span>
+              I am 25 years old and currently live in San Tan Valley, Arizona. I
+              have two dogs named Bindi and Dale. In my free time, I enjoy
+              fishing, golfing, playing pickleball, and even snowboarding when
+              the opportunity arises. On quieter days, I indulge in my inner
+              movie enthusiast, bowling and occasionally build Lego's where I
+              proudly consider myself a Star Wars nerd. When I am not pursuing
+              my hobbies, I value the quality time I spend with my friends and
+              family. I have previously worked in both remote and traditional
+              office settings. Looking for a role where I can learn from
+              mistakes, collaborate with different individuals, provide problem
+              solving solutions and grow as a person and employee.
+            </span>
+          </Text>
+        </ContentContainer>
+      </Section>
+      <Section>
+        <ContentContainer>
+          <Text size={'h2'} weight={'bold'}>
+            Experience
+          </Text>
           <InformationRow
             title="Associate Engineer"
             date="Jan 2018 - April 2023"
             company="Sibi, llc"
           >
-            <Text2 size={'body'} weight={'light'}>
+            <Text size={'body'} weight={'light'}>
               <span>
                 Working at Sibi, I learned many new things around coding and
                 collaborating with others. I started as Sibi cleaning up and
@@ -82,14 +95,16 @@ export function HomePage() {
                 Sibi, I developed many skills around troubleshooting, problem
                 solving and brainstorming for these features.
               </span>
-            </Text2>
+            </Text>
           </InformationRow>
+        </ContentContainer>
+        <ContentContainer>
           <InformationRow
             title="Floor Employee"
             date="Oct 2015 - Nov 2017"
             company="Fidelitone, llc"
           >
-            <Text2 size={'body'} weight={'light'}>
+            <Text size={'body'} weight={'light'}>
               <span>
                 As a Floor employee at Fidelitone, I was rotated around several
                 different warehouse operations. Utilizing heavy machinery, such
@@ -113,14 +128,16 @@ export function HomePage() {
                 contributions to the overall success in the fast-paced
                 warehousing and logistics functions of Fidelitone.
               </span>
-            </Text2>
+            </Text>
           </InformationRow>
+        </ContentContainer>
+        <ContentContainer>
           <InformationRow
             title="Team Member"
             date="Nov 2014 - Oct 2015"
             company="Pizza Hut"
           >
-            <Text2 size={'body'} weight={'light'}>
+            <Text size={'body'} weight={'light'}>
               <span>
                 Pizza Hut was my first job as soon as I got my drivers license.
                 As a team member, my role encompassed various responsibilities
@@ -134,9 +151,9 @@ export function HomePage() {
                 Hut helped build communication skills and the ability to work in
                 a fast-paced environment.
               </span>
-            </Text2>
+            </Text>
           </InformationRow>
-        </InformationRowsWrap>
+        </ContentContainer>
       </Section>
     </Page>
   );
@@ -151,23 +168,17 @@ const Content = styled('div', {
   gap: '2rem',
   alignItems: 'center',
 
-  padding: '0rem 1rem',
-
   '@tablet': {
     height: 'fit-content',
-    gap: '2rem',
-
     flexDirection: 'row',
-    padding: '0rem 2rem',
   },
 });
 
 const InfoWrap = styled('div', {
   display: 'flex',
   flexDirection: 'column',
+  flex: '1',
   gap: '2rem',
-  width: '100%',
-  height: '30%',
   justifyContent: 'center',
 });
 
@@ -175,6 +186,7 @@ const ImageWrap = styled('div', {
   display: 'flex',
   width: '100%',
   height: '100%',
+  flex: '1',
   borderRadius: '15px',
   position: 'relative',
   overflow: 'hidden',
@@ -188,27 +200,5 @@ const ImageWrap = styled('div', {
     '@tablet': {
       height: '100%',
     },
-  },
-});
-
-const Section = styled('div', {
-  display: 'flex',
-  // height: 'calc(100% - 60px)',
-  flexDirection: 'column',
-  padding: '0rem 1.5rem',
-  marginTop: '2rem',
-  gap: '1rem',
-
-  '@tablet': {
-    padding: '0rem 2rem',
-  },
-});
-
-const InformationRowsWrap = styled('div', {
-  display: 'flex',
-  flexDirection: 'column',
-  gap: '2rem',
-  '@tablet': {
-    gap: '2rem',
   },
 });

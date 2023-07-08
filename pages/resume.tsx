@@ -1,4 +1,4 @@
-import { ResumePage } from '../../components';
+import { ResumePage } from '../lib';
 
 export const Resume = () => {
   return <ResumePage />;

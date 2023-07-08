@@ -41,14 +41,14 @@ function CustomApp({ Component, pageProps }: AppProps) {
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
       </Head>
       <AppHeader />
-      <CustomComponent
-        Component={Component}
-        pageProps={pageProps}
-        router={router}
-      />
-      <footer>
-        <AppFooter />
-      </footer>
+      <main>
+        <CustomComponent
+          Component={Component}
+          pageProps={pageProps}
+          router={router}
+        />
+      </main>
+      <AppFooter />
     </>
   );
 }

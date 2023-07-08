@@ -8,19 +8,16 @@ export const globalStyles = globalCss({
     boxSizing: 'border-box',
     height: '100%',
     fontFamily: "'CerebriSans',sans-serif",
-    backgroundColor: '$background',
+    position: 'relative',
+    backgroundColor: '$white',
+  },
 
-    footer: {
-      backgroundColor: '$background',
-      width: '100%',
-      height: '60px' /* Height of the footer */,
-      borderTop: '1px solid $primary',
-      color: '$primary',
-      display: 'flex',
-      alignItems: 'center',
-      flexDirection: 'row-reverse',
-      marginTop: '4rem',
-    },
+  body: {
+    overflowX: 'hidden',
+  },
+
+  'body.is-open': {
+    overflow: 'hidden',
   },
 
   a: {

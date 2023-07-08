@@ -1,4 +1,4 @@
-import { Text2 } from './Text';
+import { Text } from './Text';
 
 import { colors, styled } from '../stitches.config';
 
@@ -18,21 +18,21 @@ export const InformationRow = ({
   return (
     <Wrap>
       <TitleWrap>
-        <Text2 color={'blue'} weight={'semiBold'} size={'h5'}>
+        <Text color={'blue'} weight={'semiBold'} size={'h5'}>
           {title}
-        </Text2>
-        <Text2 color={'grey'} weight={'normal'}>
+        </Text>
+        <Text color={'grey'} weight={'normal'}>
           {date}
-        </Text2>
+        </Text>
       </TitleWrap>
       <ContentWrap>
-        <Text2
+        <Text
           style={{ paddingBottom: '.5rem' }}
           weight={'semiBold'}
           size={'h5'}
         >
           {company}
-        </Text2>
+        </Text>
 
         {children}
       </ContentWrap>
@@ -44,7 +44,7 @@ const Wrap = styled('div', {
   display: 'flex',
   flexDirection: 'column',
   gap: '1rem',
-  padding: '0rem',
+  padding: '1rem 0rem 0rem',
   background: '$background',
 
   '@tablet': {
