@@ -2,24 +2,25 @@ import Head from 'next/head';
 import { styled } from '../stitches.config';
 
 const CustomPageLayout = styled('div', {
-  paddingTop: '6rem',
-  height: 'auto',
   variants: {
-    fullPage: {
-      true: {
-        height: 'calc(100% - 124px)',
+    background: {
+      lightBlue: {
+        backgroundColor: '$lightBlue',
+      },
+      default: {
+        backgroundColor: '$white',
       },
     },
   },
-  '@tablet': {
-    paddingTop: '6rem',
+  defaultVariants: {
+    background: 'default',
   },
 });
 
 interface CustomPageProps {
   title: string;
-  fullPage?: boolean;
   children: React.ReactNode;
+  background?: 'lightBlue' | 'default';
 }
 
 export const Page = (props: CustomPageProps) => {
@@ -29,17 +30,11 @@ export const Page = (props: CustomPageProps) => {
       <Head>
         <title>{title}</title>
       </Head>
-      <CustomPageLayout fullPage={props.fullPage}>
+      <CustomPageLayout background={props.background}>
         {props.children}
       </CustomPageLayout>
     </>
   );
 };
-
-export const Section = styled('div', {
-  display: 'flex',
-  flexDirection: 'column',
-  gap: '.5rem',
-});
 
 export default Page;

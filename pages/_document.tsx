@@ -4,7 +4,7 @@ import { getCssText } from '../stitches.config';
 class MyDocument extends Document {
   render(): JSX.Element {
     return (
-      <Html>
+      <Html lang="en">
         <Head>
           <style
             id="stitches"
@@ -13,7 +13,7 @@ class MyDocument extends Document {
 
           {/* Inject the Segment snippet into the <head> of the document  */}
         </Head>
-        <body>
+        <body id="body">
           <Main />
           <NextScript />
         </body>

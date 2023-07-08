@@ -9,6 +9,7 @@ const baseColors = {
   greyBlack: '#333333',
   red: '#FF0000',
   blue: '#5265c4',
+  lightBlue: '#CCE4FE',
 };
 
 export const colors = {
@@ -30,6 +31,7 @@ export const { styled, css, globalCss, keyframes, getCssText } = createStitches(
         background: colors.background,
         red: colors.red,
         blue: colors.blue,
+        lightBlue: colors.lightBlue,
       },
       fontSizes,
       fontWeights: {
@@ -44,21 +46,14 @@ export const { styled, css, globalCss, keyframes, getCssText } = createStitches(
         base: "'CerebriSans',sans-serif",
       },
       shadows: {},
-      transitions: {
-        LongHover: 'all 250ms ease-in',
-        shortHover: 'all 150ms ease-in-out',
-        default: 'all 100ms ease-in-out',
-      },
+      transitions: {},
     },
-    utils: {
-      size: (value: string) => ({
-        width: value,
-        height: value,
-      }),
-    },
+    utils: {},
     media: {
-      tablet: '(min-width: 575px)',
-      desktop: '(min-width: 990px)',
+      tablet: '(min-width: 35.938rem)',
+      desktop: '(min-width: 61.875rem)',
+      midDesktop: '(min-width: 67.8125rem)',
+      largeDesktop: '(min-width: 84.875rem)',
     },
   }
 );
