@@ -42,7 +42,7 @@ export function ContactPage() {
     <Page title="Contact">
       <Section style={'header'} backgroundColor={colors.lightBlue}>
         <Content>
-          <ContentContainer css={{ margin: 0, flex: 1 }}>
+          <ContentContainer css={{ margin: 0, flex: 0.5 }}>
             <Form.Label>
               <Text weight={'bold'} size={'h2'}>
                 Get in touch
@@ -79,7 +79,7 @@ export function ContactPage() {
               </address>
             </Form.Row>
           </ContentContainer>
-          <ContentContainer css={{ margin: 0, flex: 1 }}>
+          <ContentContainer css={{ margin: 0, flex: 1.5 }}>
             <FormWrap onSubmit={handleSubmit(onSubmit)} method="POST">
               <Form.Label>
                 <Text weight={'bold'} size={'h2'}>
