@@ -81,7 +81,10 @@ export const AppHeader = () => {
               // isActive={Boolean(router.pathname === '/')}
               href={'/'}
               onClick={() => {
-                setIsOpen(false);
+                if (isOpen) {
+                  handleToggleClick(!isOpen);
+                } else {
+                }
               }}
             >
               Eriq Quatkemeyer
