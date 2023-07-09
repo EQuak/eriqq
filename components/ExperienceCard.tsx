@@ -48,17 +48,13 @@ export const ExperienceCard = ({
       </Top>
       <Bottom>
         <Section>
-          <Text color={'grey'} size={'body'}>
-            Description
-          </Text>
+          <Text size={'body'}>Description</Text>
           <Text size={'body'} weight={'light'}>
             {description}
           </Text>
         </Section>
         <Section>
-          <Text color={'grey'} size={'body'}>
-            Skills
-          </Text>
+          <Text size={'body'}>Skills</Text>
           <div>
             {skills?.map((skill) => {
               return <Pill key={skill.id} title={skill.skill} />;
@@ -66,9 +62,7 @@ export const ExperienceCard = ({
           </div>
         </Section>
         <Section>
-          <Text color={'grey'} size={'body'}>
-            Duties
-          </Text>
+          <Text size={'body'}>Duties</Text>
           <Text size={'body'} weight={'light'}>
             <ul className={'duties-list'}>
               {duties.split('\n').map((item, index) => (
