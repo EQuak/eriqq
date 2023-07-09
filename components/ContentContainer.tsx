@@ -23,7 +23,7 @@ export const ContentContainer = ({
     <ContainerWrap
       padding={padding}
       direction={direction}
-      css={{ contentGap: gap, ...css }}
+      css={{ gap: gap, ...css }}
     >
       {children}
     </ContainerWrap>

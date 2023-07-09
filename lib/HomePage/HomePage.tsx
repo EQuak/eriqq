@@ -6,11 +6,13 @@ import {
   ContentContainer,
   Section,
   Text,
-  InformationRow,
+  ExperienceCard,
+  Pill,
 } from '../../components';
 import primaryImage from '../../public/assets/IMG_3055.jpg';
 
 import { colors, styled } from '../../stitches.config';
+import { skills } from '../../data';
 
 export function HomePage() {
   return (
@@ -42,7 +44,7 @@ export function HomePage() {
         </ContentContainer>
       </Section>
       <Section>
-        <ContentContainer>
+        <ContentContainer gap={'.5rem'}>
           <Text size={'h2'} weight={'bold'}>
             About me
           </Text>
@@ -64,95 +66,69 @@ export function HomePage() {
         </ContentContainer>
       </Section>
       <Section>
-        <ContentContainer>
+        <ContentContainer gap={'.5rem'}>
+          <Text size={'h2'} weight={'bold'}>
+            Skills
+          </Text>
+          <div style={{ margin: '0 auto' }}>
+            {skills.map((skill) => {
+              return <Pill key={skill.id} title={skill.skill} />;
+            })}
+          </div>
+        </ContentContainer>
+      </Section>
+      <Section>
+        <ContentContainer gap={'.5rem'}>
           <Text size={'h2'} weight={'bold'}>
             Experience
           </Text>
-          <InformationRow
-            title="Associate Engineer"
-            date="Jan 2018 - April 2023"
-            company="Sibi, llc"
-          >
-            <Text size={'body'} weight={'light'}>
-              <span>
-                Working at Sibi, I learned many new things around coding and
-                collaborating with others. I started as Sibi cleaning up and
-                consolidating data on spreadsheets. This was a manual process
-                until I was given the opportunity to try and make this an
-                automated process with code. I collaborated with some of the
-                existing engineers and was able to create a script that scrapes
-                the data we wanted to capture. Shortly after, I started working
-                with multiple engineering teams, where I contributed to work in
-                technologies such as React, Node.js, JavaScript, and TypeScript
-                for both the frontend and backend of the software. Much of my
-                knowledge around coding was done through recommended online
-                courses & books and experience working with many different
-                senior developers from all different backgrounds. I quickly
-                picked up new processes to create clean, efficient and readable
-                code while collaborating with other team engineers to work on
-                existing features or develop new features from scratch where I
-                would take part in providing ideas and solutions. Working at
-                Sibi, I developed many skills around troubleshooting, problem
-                solving and brainstorming for these features.
-              </span>
-            </Text>
-          </InformationRow>
-        </ContentContainer>
-        <ContentContainer>
-          <InformationRow
-            title="Floor Employee"
-            date="Oct 2015 - Nov 2017"
-            company="Fidelitone, llc"
-          >
-            <Text size={'body'} weight={'light'}>
-              <span>
-                As a Floor employee at Fidelitone, I was rotated around several
-                different warehouse operations. Utilizing heavy machinery, such
-                as electric pallet jacks, I loaded and unloaded pallets in semi
-                trucks and put them in the correct spot throughout the
-                warehouse. I also typically ran the box folding machines and was
-                one of the go to employees to help troubleshoot issues that came
-                about on those machines. In our order fulfillment department, I
-                was rotated around in many different roles. I was one of the
-                trusted employees that would sometimes come in early to help
-                sort our daily orders to optimize the picking picking process.
-                When I was working on picking those orders, I was trusted with
-                working at the back of the assembly line to not only pick the
-                remaining contents of the order, but to also review all contents
-                that should be in that order before packaging for the shipping
-                department. Within the employees that would review the contents,
-                I had some of the lowest returns due to incorrect items in the
-                order. Additionally, in the shipping department, I scanned the
-                orders to generate shipping labels and placed them on pallets
-                based on shipping methods. I believe I made significant
-                contributions to the overall success in the fast-paced
-                warehousing and logistics functions of Fidelitone.
-              </span>
-            </Text>
-          </InformationRow>
-        </ContentContainer>
-        <ContentContainer>
-          <InformationRow
-            title="Team Member"
-            date="Nov 2014 - Oct 2015"
-            company="Pizza Hut"
-          >
-            <Text size={'body'} weight={'light'}>
-              <span>
-                Pizza Hut was my first job as soon as I got my drivers license.
-                As a team member, my role encompassed various responsibilities
-                within the restaurant's operations. My primary duty was to take
-                customer orders, either over the phone or in person, with a
-                welcoming attitude. I was responsible for inputting orders into
-                the system and making those orders along with contributing to
-                the overall efficiency of the restaurant by assisting with food
-                preparation, collaborating with teammates to maintain
-                cleanliness and organization in the kitchen. Working at Pizza
-                Hut helped build communication skills and the ability to work in
-                a fast-paced environment.
-              </span>
-            </Text>
-          </InformationRow>
+          <ContentContainer gap={'1rem'} css={{ padding: 0, margin: 0 }}>
+            <ExperienceCard
+              title={'Associate Engineer'}
+              date={'Jan 2018 - April 2023'}
+              employer={'Sibi, llc'}
+              description={
+                'Worked on front-end and back-end features of the software collaborating with other engineers, designers and product managers.'
+              }
+              skills={skills.filter((skill) => {
+                return skill.companies.includes('Sibi');
+              })}
+              logo={'/assets/Sibi-logo.png'}
+              duties={
+                'Developed responsive interfaces using CSS, HTML, Javascript & Typescript from Figma designs\n Utilized Cypress to build end-to-end tests\n Implemented unit tests with Jest framework for components and Node APIs\n Used Git to manage code repositories for collaboration, version tracking, and code review processes\n Worked with AWS services like EventBridge, CloudWatch, S3, SNS, SQS and CloudFront\n Implemented data modeling and schema design for DynamoDB, MongoDB, and PostgreSQL for data organization and query efficiency\n Integrated Datadog monitoring to provide real-time insights on E2E tests and performance monitoring for health and stability\n Used Apollo GraphQL to fetch and manage data from server to client\n Utilized the Stripe payment gateway to process online payments & transactions, handle payment forms and displaying relevant payment information\n Worked in an agile Scrum environment with a daily standup and weekly retros to reflect on sprints\n Worked on migrating from a legacy web application to a serverless Next.js web application'
+              }
+            />
+            <ExperienceCard
+              title={'Floor Employee'}
+              date={'Oct 2015 - Nov 2017'}
+              employer={'Fidelitone'}
+              description={
+                'Rotated through many different departments which included: Order fulfillment, Line picking, Loading & unloading semi-trucks.'
+              }
+              skills={skills.filter((skill) => {
+                return skill.companies.includes('Fidelitone');
+              })}
+              logo={'/assets/Fidelitone-logo.jpeg'}
+              duties={
+                'Was a trusted employee to take on multiple responsibilities throughout the company\n Had some of the lowest returns due to incorrect items after personally reviewing\n Worked with and around heavy equipment'
+              }
+            />
+            <ExperienceCard
+              title={'Team Member'}
+              date={'Nov 2014 - Oct 2015'}
+              employer={'Pizza Hut'}
+              description={
+                'My primary duties was to take customer orders, input them into the system and complete those orders.'
+              }
+              skills={skills.filter((skill) => {
+                return skill.companies.includes('Pizza-Hut');
+              })}
+              logo={'/assets/Pizza-Hut-logo.jpeg'}
+              duties={
+                'Was my first job at 16\n Worked in a high pace environnement\n Maintained cleanliness and organization in the kitchen'
+              }
+            />
+          </ContentContainer>
         </ContentContainer>
       </Section>
     </Page>
@@ -180,6 +156,7 @@ const InfoWrap = styled('div', {
   flex: '1',
   gap: '2rem',
   justifyContent: 'center',
+  width: '100%',
 });
 
 const ImageWrap = styled('div', {
