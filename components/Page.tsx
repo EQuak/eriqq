@@ -5,10 +5,10 @@ const CustomPageLayout = styled('div', {
   variants: {
     background: {
       lightBlue: {
-        backgroundColor: '$lightBlue',
+        // backgroundColor: '$lightBlue',
       },
       default: {
-        backgroundColor: '$white',
+        // backgroundColor: '$white',
       },
     },
   },

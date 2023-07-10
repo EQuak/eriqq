@@ -173,7 +173,8 @@ const NavigationWrap = styled('header', {
       boxShadow: 'none',
     },
     '.row': {
-      backgroundColor: '$white',
+      background: 'url(assets/blob-scene-haikei.svg) no-repeat fixed',
+      backgroundSize: 'cover',
 
       '@midDesktop': {
         borderRadius: '25px',

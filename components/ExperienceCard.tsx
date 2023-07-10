@@ -84,6 +84,8 @@ const ExperienceCardWrap = styled('div', {
   border: '2px solid #EDEEF0',
   borderRadius: '15px',
   overflow: 'hidden',
+  backgroundColor: '$white',
+  opacity: 0.8,
 });
 
 const ImageWrap = styled('div', {

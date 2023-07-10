@@ -21,7 +21,7 @@ export function HomePage() {
         <ContentContainer>
           <Content>
             <InfoWrap>
-              <Text size={'title'} weight={'bold'}>
+              <Text color={'white'} size={'title'} weight={'bold'}>
                 <span>Hello, I am Eriq</span>
               </Text>
               <a
@@ -45,29 +45,38 @@ export function HomePage() {
       </Section>
       <Section>
         <ContentContainer gap={'.5rem'}>
-          <Text size={'h2'} weight={'bold'}>
+          <Text color={'white'} size={'h2'} weight={'bold'}>
             About me
           </Text>
-          <Text size={'body'} weight={'light'}>
-            <span>
-              I am 25 years old and currently live in San Tan Valley, Arizona. I
-              have two dogs named Bindi and Dale. In my free time, I enjoy
-              fishing, golfing, playing pickleball, and even snowboarding when
-              the opportunity arises. On quieter days, I indulge in my inner
-              movie enthusiast, bowling and occasionally build Lego's where I
-              proudly consider myself a Star Wars nerd. When I am not pursuing
-              my hobbies, I value the quality time I spend with my friends and
-              family. I have previously worked in both remote and traditional
-              office settings. Looking for a role where I can learn from
-              mistakes, collaborate with different individuals, provide problem
-              solving solutions and grow as a person and employee.
-            </span>
-          </Text>
+          <div
+            style={{
+              backgroundColor: colors.white,
+              padding: '1rem',
+              borderRadius: '15px',
+              opacity: 0.8,
+            }}
+          >
+            <Text size={'body'} weight={'light'}>
+              <span>
+                I am 25 years old and currently live in San Tan Valley, Arizona.
+                I have two dogs named Bindi and Dale. In my free time, I enjoy
+                fishing, golfing, playing pickleball, and even snowboarding when
+                the opportunity arises. On quieter days, I indulge in my inner
+                movie enthusiast, bowling and occasionally build Lego's where I
+                proudly consider myself a Star Wars nerd. When I am not pursuing
+                my hobbies, I value the quality time I spend with my friends and
+                family. I have previously worked in both remote and traditional
+                office settings. Looking for a role where I can learn from
+                mistakes, collaborate with different individuals, provide
+                problem solving solutions and grow as a person and employee.
+              </span>
+            </Text>
+          </div>
         </ContentContainer>
       </Section>
       <Section>
         <ContentContainer gap={'.5rem'}>
-          <Text size={'h2'} weight={'bold'}>
+          <Text color={'white'} size={'h2'} weight={'bold'}>
             Skills
           </Text>
           <div style={{ margin: '0 auto' }}>
@@ -79,7 +88,7 @@ export function HomePage() {
       </Section>
       <Section>
         <ContentContainer gap={'.5rem'}>
-          <Text size={'h2'} weight={'bold'}>
+          <Text color={'white'} size={'h2'} weight={'bold'}>
             Experience
           </Text>
           <ContentContainer gap={'1rem'} css={{ padding: 0, margin: 0 }}>
