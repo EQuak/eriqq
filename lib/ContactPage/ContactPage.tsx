@@ -165,6 +165,10 @@ const Content = styled('div', {
   width: '100%',
   justifyContent: 'space-between',
   gap: '2rem',
+  backgroundColor: '$white',
+  opacity: 0.8,
+  borderRadius: '15px',
+  padding: '1rem',
 
   // padding: '0rem 1rem 5rem 1rem',
 

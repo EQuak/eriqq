@@ -51,7 +51,8 @@ const MobileNavigationWrap = styled('div', {
     display: 'flex',
     flexDirection: 'column',
     transition: '.5s',
-    backgroundColor: 'white',
+    background: 'url(assets/blob-scene-haikei.svg) no-repeat fixed',
+    backgroundSize: 'cover',
     zIndex: 900,
 
     ul: {

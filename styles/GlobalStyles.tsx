@@ -9,7 +9,8 @@ export const globalStyles = globalCss({
     height: '100%',
     fontFamily: "'CerebriSans',sans-serif",
     position: 'relative',
-    backgroundColor: '$white',
+    background: 'url(assets/blob-scene-haikei.svg) no-repeat fixed',
+    backgroundSize: 'cover',
   },
 
   body: {
