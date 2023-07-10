@@ -5,7 +5,7 @@ export const StyledLink = styled(Link, {
   display: 'inline-block',
   fontWeight: '$semiBold',
   fontSize: '1.333rem',
-  color: '$white',
+  color: '$black',
   alignItems: 'center',
   textAlign: 'center',
   cursor: 'pointer',
