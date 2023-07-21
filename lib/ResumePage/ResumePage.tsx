@@ -19,7 +19,10 @@ export function ResumePage() {
             <Text decoration={'alignCenter'} size={'h2'} weight={'bold'}>
               Thank you for taking a look!
             </Text>
-            <Image src={resumeImage} alt={''} placeholder="blur" />
+            <Text decoration={'alignCenter'} size={'h4'} weight={'bold'}>
+              Click the button below to view resume
+            </Text>
+            {/* <Image src={resumeImage} alt={''} placeholder="blur" /> */}
             <Link
               href="https://eriqq.notion.site/Eriq-Quatkemeyer-Resume-d3b4574e0e024c3fb5bd4a94c19f2f5e?pvs=4"
               passHref
@@ -40,7 +43,7 @@ const Content = styled('div', {
   display: 'flex',
   flexDirection: 'column',
   width: '100%',
-  height: '100%',
+  minHeight: '600px',
   alignItems: 'center',
   textAlign: 'center',
   gap: '2rem',
